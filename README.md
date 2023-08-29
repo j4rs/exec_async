@@ -28,7 +28,7 @@ end
 order = Order.new
 # Execute the ship_in in bg
 order.exec_async :shipt_it, to: "9703 Pilgrim Street Hagerstown, MD 21740"
-# Delay the execution
+# Schedule (or delay) the execution for two hours
 order.exec_async_in 2.hours, :track_delivery
 ```
 
