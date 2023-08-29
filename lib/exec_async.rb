@@ -8,7 +8,7 @@ module ExecAsync
       arity = context.method(method_name).arity
 
       args_size = args&.size&.to_i
-      unless arity.negative? || arity === args_size
+      unless arity.negative? || arity == args_size
         raise "Invalid number of arguments, #{method_name} " \
               "expected #{arity} but received #{args_size}"
       end
