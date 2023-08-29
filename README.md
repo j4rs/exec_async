@@ -32,7 +32,7 @@ order.exec_async :shipt_it, to: "9703 Pilgrim Street Hagerstown, MD 21740"
 order.exec_async_in 2.hours, :track_delivery
 ```
 
-It support class methods too:
+It supports class methods too:
 
 ```ruby
 Order.exec_async :notify_deliveries_for_today
