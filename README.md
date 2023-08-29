@@ -1,4 +1,4 @@
-### Exec methods async without having to create extra classes.
+### Execute methods async without having to create extra classes.
 
 Utility code (feel free to copy and paste it to your codebase) **to convert your objects and/or class methods in Ruby into background jobs**.
 
