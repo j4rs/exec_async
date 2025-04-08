@@ -1,6 +1,6 @@
 ### Execute methods async without having to create extra classes.
 
-Utility code (feel free to copy and paste it to your codebase) **to convert your active records or any class methods in Ruby into background jobs**.
+Utility code (feel free to copy and paste it to your codebase) **to convert your active records or any class methods in Ruby into Sidekiq background jobs**.
 
 Note: It is based on [Sidekiq](https://github.com/sidekiq/sidekiq) but easily adaptable to [ActiveJob](https://guides.rubyonrails.org/active_job_basics.html) or similar implementations of background processing for ruby code.
 
@@ -30,6 +30,8 @@ order = Order.find(123)
 order.exec_async :shipt_it, to: "9703 Pilgrim Street Hagerstown, MD 21740"
 # Schedule (or delay) the execution for two hours
 order.exec_async_in 2.hours, :track_delivery
+# Customize the sidekiq job
+order.exec_async_in 2.hours, :track_delivery, queue: :low_priority
 ```
 
 It supports class methods too:
